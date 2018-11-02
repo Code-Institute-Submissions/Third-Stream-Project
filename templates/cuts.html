@@ -1,0 +1,32 @@
+{% extends 'base.html' %} {% block content %}
+
+
+<ul class="collapsible" data-collapsible="accordion">
+    {% for cut in animal %}
+    <li>
+            <div class="collapsible-header">
+                <div class="col s3">
+                    <i class="material-icons">expand_more</i>
+                    <strong>{{cut.cut_name}}</strong>
+                     
+                </div>
+                <div class="task_header col s9">
+                    <a href="#" class="waves-effect waves-light btn btn_small blue">Edit</a>
+                    <a href="#" class="waves-effect waves-light btn btn_small blue">Add</a>
+                </div>
+            </div>
+            <div class="collapsible-body">
+                <p>All items are per 100g</p>
+                <p>Calories(kcal): {{cut.calories}}</p>
+                <p>Carbohydrates(g): {{cut.carbohydrates}}</p>
+                <p>Fat(g): {{cut.fat}}</p>
+                <p>Protein(g): {{cut.protein}}</p>
+            </div>
+    </li>
+    {% endfor %}
+</ul>
+
+
+
+
+{% endblock content %}

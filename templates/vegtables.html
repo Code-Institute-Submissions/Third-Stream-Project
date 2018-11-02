@@ -1,0 +1,35 @@
+{% extends 'base.html' %} {% block content %}
+
+<h1>Vegtables</h1>
+<hr>
+<br>
+<br>
+<br>
+
+<div class="row">
+    {% for animal in animals %}
+    <div class="col s12 m6 l4">
+        <div class="card">
+            <div class="card-image">
+                <img src="{{ animal.image }}">
+                <span class="card-title">{{ animal.animal_name }}</span>
+                <a class="btn-floating halfway-fab waves-effect waves-light red" href="{{url_for('add_cut', animal_name=animal.animal_name)}}"><i class="material-icons">add</i></a>
+            </div>
+            <div class="card-content">
+                <p>{{ animal.animal_name }}</p>
+            </div>
+            <div class="card-action">
+                <a href="{{url_for('show_cuts', animal_name=animal.animal_name)}}">View Cuts</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+    <div class="col">
+        <a href="{{url_for('add_animal')}}" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
+    </div>
+</div>
+
+
+
+
+{% endblock content %}
