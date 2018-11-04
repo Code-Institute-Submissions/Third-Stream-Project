@@ -12,13 +12,6 @@ app.config["MONGO_URI"] = "mongodb://dmongey:Password1@ds247223.mlab.com:47223/d
 
 mongo = PyMongo(app)
 
-def get_animal_names():
-    animals = []
-    for animal in mongo.db.collection_names():
-        if not animal.startswith("system.") and not animal.startswith("recipes") and not animal.startswith("images"):
-            animals.append(animal)
-    return animals
-
 @app.route("/")
 def show_macros():
     return render_template("homepage.html")
@@ -27,6 +20,11 @@ def show_macros():
 def show_meats():
     animals = mongo.db["images"].find()
     return render_template("meats.html", animals=animals)
+    
+@app.route("/vegtables")
+def show_vegtables():
+    vegtables = mongo.db["images"].find({"vegtable_name" : "Carrot"})
+    return render_template("vegtables.html", vegtables=vegtables)
     
 @app.route("/recipes")
 def show_recipes():
@@ -40,16 +38,17 @@ def add_animal():
         form_values = request.form.to_dict()
         form_values["image"] = "data:image/png;base64," + image_string
         animal_name = request.form["animal_name"]
-        mongo.db.create_collection(animal_name)
         images = form_values["image"]
         mongo.db["images"].insert_one(form_values)
         return redirect("/meats")
     else:
+        
         return render_template("add_meat.html")
+
 
 @app.route("/<animal_name>/cuts") 
 def show_cuts(animal_name):
-    animal = mongo.db[animal_name].find()
+    animal = mongo.db["animals"].find({"animal_name" : animal_name})
     return render_template("cuts.html", animal=animal)
  
         
@@ -57,11 +56,42 @@ def show_cuts(animal_name):
 def add_cut(animal_name):
     if request.method == "POST":
         form_values = request.form.to_dict()
-        mongo.db[animal_name].insert_one(form_values)
+        mongo.db["animals"].insert_one(form_values)
         return redirect(url_for("show_cuts", animal_name=animal_name))
     else: 
-        return render_template("add_cut.html")
+        return render_template("add_cut.html", animal_name=animal_name)
         
+        
+@app.route("/add_vegtable", methods=["POST", "GET"])
+def add_vegtable():
+    if request.method == "POST":
+        image = request.files['image']  
+        image_string = base64.b64encode(image.read()).decode("utf-8")
+        form_values = request.form.to_dict()
+        form_values["image"] = "data:image/png;base64," + image_string
+        vegtable_name = request.form["vegtable_name"]
+        images = form_values["image"]
+        mongo.db["images"].insert_one(form_values)
+        return redirect("/vegtables")
+    else:
+        
+        return render_template("add_vegtable.html")
+        
+
+@app.route("/<vegtable_name>/vegtableType") 
+def show_vegtableType(vegtable_name):
+    vegtable = mongo.db["vegtables"].find({"vegtable_name" : vegtable_name})
+    return render_template("vegtableType.html", vegtables=vegtable)
+ 
+        
+@app.route("/<vegtable_name>/add_vegtableType", methods=["POST", "GET"])
+def add_vegtableType(vegtable_name):
+    if request.method == "POST":
+        form_values = request.form.to_dict()
+        mongo.db["vegtables"].insert_one(form_values)
+        return redirect(url_for("show_vegtableType", vegtable_name=vegtable_name))
+    else: 
+        return render_template("add_vegtableType.html", vegtable_name=vegtable_name)
     
 
 
