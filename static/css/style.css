@@ -1,4 +1,4 @@
-.card-title {
+.text {
     color: black;
 }
 
@@ -8,4 +8,15 @@
     line-height: 24px;
     margin: 5px 5px;
     padding: 0 0.5em;
+}
+
+.margin-top {
+    margin-top: 5%;
+}
+
+.bottom-right {
+    position: fixed;
+    z-index: 2;
+    bottom: 15px;
+    right: 35px;
 }

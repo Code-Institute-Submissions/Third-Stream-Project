@@ -1,30 +1,30 @@
 {% extends 'base.html' %} {% block content %}
 
-<h3>Add Cut</h3>
+<h3>Edit Cut</h3>
 
 <form method="POST" class="col s12" enctype='multipart/form-data'>
 
     <div class="row">
         
         <div class="input-field col s12">
-            <input disabled value="{{ vegtable_name }}" id="vegtable_name" name="vegtable_name" type="text" class="validate">
-            <label for="disabled">Vegtable</label>
-            <input type="hidden" name="vegtable_name" value="{{ vegtable_name }}">
+            <input disabled value="{{ cut.animal_name }}" id="animal_name" name="animal_name" type="text" class="validate">
+            <label for="disabled">Meat</label>
+            <input type="hidden" name="animal_name" value="{{ cut.animal_name }}">
         </div>
         
     </div>
     <div class="row">
         <div class="input-field col s12">
             <i class="material-icons prefix">assignment</i>
-            <input id="vegtableType" name="vegtableType" type="text">
-            <label for="icon_prefix">Vegtable Type</label>
+            <input id="cut_name" name="cut_name" type="text" value="{{ cut.cut_name }}">
+            <label for="icon_prefix">Cut Name</label>
         </div>
     </div>
 
     <div class="row">
         <div class="input-field col s12">
             <i class="material-icons prefix">assignment</i>
-            <input id="calories" name="calories" type="text">
+            <input id="calories" name="calories" type="text" value="{{ cut.calories }}">
             <label for="icon_prefix">Calories</label>
         </div>
     </div>
@@ -32,7 +32,7 @@
     <div class="row">
         <div class="input-field col s12">
             <i class="material-icons prefix">assignment</i>
-            <input id="carbohydrates" name="carbohydrates" type="text">
+            <input id="carbohydrates" name="carbohydrates" type="text" value="{{ cut.carbohydrates }}">
             <label for="icon_prefix">Carbohydrates(g)</label>
         </div>
     </div>
@@ -40,7 +40,7 @@
     <div class="row">
         <div class="input-field col s12">
             <i class="material-icons prefix">assignment</i>
-            <input id="fat" name="fat" type="text">
+            <input id="fat" name="fat" type="text" value="{{ cut.fat }}">
             <label for="icon_prefix">Fat(g)</label>
         </div>
     </div>
@@ -48,7 +48,7 @@
     <div class="row">
         <div class="input-field col s12">
             <i class="material-icons prefix">assignment</i>
-            <input id="protein" name="protein" type="text">
+            <input id="protein" name="protein" type="text" value="{{ cut.protein}}">
             <label for="icon_prefix">Protein(g)</label>
         </div>
     </div>

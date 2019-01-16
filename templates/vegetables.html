@@ -1,0 +1,41 @@
+{% extends 'base.html' %} {% block content %}
+
+<h1>Vegetables</h1>
+<hr>
+<br>
+<br>
+<br>
+
+<div class="row">
+    
+    {% for vegetable in vegetables %}
+    <div class="col-s-4 col-md-4 col-lg-4">
+        <div class="card">
+            <div class="card-image waves-effect waves-block waves-light">
+                <img class="activator" src="{{ vegetable.image }}" width="75" height="175">
+            </div>
+            <div class="card-content">
+                <span class="card-title activator grey-text text-darken-4">{{ vegetable.vegetable_name }}<i class="material-icons right">more_vert</i></span>
+                <a href="{{url_for('edit_vegetable', vegetable_name=vegetable.vegetable_name, vegetable_id=vegetable._id)}}">Edit</a>
+            </div>
+            <div class="card-reveal">
+                <span class="card-title grey-text text-darken-4">{{ vegetable.vegetable_name }}<i class="material-icons right">close</i></span>
+                <p>Serving Size: 100g</p>
+                <p>Calories(kcal): {{vegetable.calories}}</p>
+                <p>Carbohydrates(g): {{vegetable.carbohydrates}}</p>
+                <p>Fat(g): {{vegetable.fat}}</p>
+                <p>Protein(g): {{vegetable.protein}}</p>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+    
+    <div class="col">
+        <a href="{{url_for('add_vegetable')}}" class="bottom-right btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
+    </div>
+</div>
+
+
+
+
+{% endblock content %}
