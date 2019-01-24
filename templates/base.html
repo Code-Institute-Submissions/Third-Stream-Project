@@ -9,8 +9,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
-    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css" />
-    <title>Document</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css"/>
+    <title>Macro Tracker</title>
 </head>
 
 <body>
@@ -27,6 +27,8 @@
         </div>
     </nav>
     <ul class="sidenav" id="mobile-demo">
+        <li><a href="{{ url_for('show_macros') }}">Home</a></li>
+        <hr>
         <li><a href="{{ url_for('show_meats') }}">Meat</a></li>
         <li><a href="{{ url_for('show_vegetables') }}">Vegtables</a></li>
         <li><a href="{{ url_for('show_recipes') }}">Recipes</a></li>
@@ -34,22 +36,20 @@
         
     </header>
     <div class="container">
-        {% block content %} {% endblock content %}
+        {% block content %} 
+        
+        {% endblock content %}
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-    
      <script>
-          
           $(document).ready(function() {
             $('.collapsible').collapsible();
             $('select').material_select();
             $(".button-collapse").sideNav();
             $('.sidenav').sidenav();
-            
-            
-        });
+           });
      </script>
 
 </body>

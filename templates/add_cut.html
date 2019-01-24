@@ -1,65 +1,62 @@
 {% extends 'base.html' %} {% block content %}
 
-<h3>Add Cut</h3>
+<h3 class="margin-left">Add Cut</h3>
 
-<form method="POST" class="col s12" enctype='multipart/form-data'>
+<form method="POST" class="col-12 margin-left" enctype='multipart/form-data'>
 
     <div class="row">
-        
-        <div class="input-field col s12">
+
+        <div class="input-field col-12">
             <input disabled value="{{ animal_name }}" id="animal_name" name="animal_name" type="text" class="validate">
-            <label for="disabled">Meat</label>
+            <label>Meat</label>
             <input type="hidden" name="animal_name" value="{{ animal_name }}">
         </div>
-        
+
     </div>
     <div class="row">
-        <div class="input-field col s12">
+        <div class="input-field col-12">
             <i class="material-icons prefix">assignment</i>
-            <input id="cut_name" name="cut_name" type="text">
-            <label for="icon_prefix">Cut Name</label>
+            <input id="cut_name" name="cut_name" type="text" required>
+            <label>Cut Name</label>
         </div>
     </div>
 
     <div class="row">
-        <div class="input-field col s12">
+        <div class="input-field col-12">
             <i class="material-icons prefix">assignment</i>
-            <input id="calories" name="calories" type="text">
-            <label for="icon_prefix">Calories</label>
+            <input id="calories" name="calories" type="text" required>
+            <label>Calories</label>
         </div>
     </div>
 
     <div class="row">
-        <div class="input-field col s12">
+        <div class="input-field col-12">
             <i class="material-icons prefix">assignment</i>
-            <input id="carbohydrates" name="carbohydrates" type="text">
-            <label for="icon_prefix">Carbohydrates(g)</label>
+            <input id="carbohydrates" name="carbohydrates" type="text" required>
+            <label>Carbohydrates(g)</label>
         </div>
     </div>
 
     <div class="row">
-        <div class="input-field col s12">
+        <div class="input-field col-12">
             <i class="material-icons prefix">assignment</i>
-            <input id="fat" name="fat" type="text">
-            <label for="icon_prefix">Fat(g)</label>
+            <input id="fat" name="fat" type="text" required>
+            <label>Fat(g)</label>
         </div>
     </div>
 
     <div class="row">
-        <div class="input-field col s12">
+        <div class="input-field col-12">
             <i class="material-icons prefix">assignment</i>
-            <input id="protein" name="protein" type="text">
-            <label for="icon_prefix">Protein(g)</label>
+            <input id="protein" name="protein" type="text" required>
+            <label>Protein(g)</label>
         </div>
     </div>
     <div class="row">
         <button class="btn waves-effect waves-light" type="submit">Add Cut
-                <i class="material-icons right">playlist_add</i>
+                <i class="material-icons right">add_box</i>
         </button>
     </div>
 </form>
-
-
-
 
 {% endblock content %}

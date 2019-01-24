@@ -1,66 +1,55 @@
 {% extends 'base.html' %} {% block content %}
-<h3>Edit Vegetable</h3>
+
+<h3 class="margin-left">Edit Vegetable</h3>
+
 <div class="row">
-    <form method="POST" class="col s12" enctype='multipart/form-data'>
+    <form method="POST" class="col-12 margin-left" enctype='multipart/form-data'>
         <div class="row">
-            <div class="input-field col s12">
+            <div class="input-field col-12">
                 <i class="material-icons prefix">assignment</i>
-                <input id="vegetable_name" name="vegetable_name" type="text" value="{{vegetable.vegetable_name}}">
-                <label for="icon_prefix">Vegetable Name</label>
+                <input id="vegetable_name" name="vegetable_name" type="text" value="{{vegetable.vegetable_name}}" required>
+                <label>Vegetable Name</label>
             </div>
         </div>
         
         <div class="row">
-            <div class="input-field col s12">
+            <div class="input-field col-12">
                 <i class="material-icons prefix">assignment</i>
-                <input id="calories" name="calories" type="text" value="{{vegetable.calories}}">
-                <label for="icon_prefix">Calories</label>
+                <input id="calories" name="calories" type="text" value="{{vegetable.calories}}" required>
+                <label>Calories</label>
             </div>
         </div>
 
         <div class="row">
-            <div class="input-field col s12">
+            <div class="input-field col-12">
                 <i class="material-icons prefix">assignment</i>
-                <input id="carbohydrates" name="carbohydrates" type="text" value="{{vegetable.carbohydrates}}">
-                <label for="icon_prefix">Carbohydrates(g)</label>
+                <input id="carbohydrates" name="carbohydrates" type="text" value="{{vegetable.carbohydrates}}" required>
+                <label>Carbohydrates(g)</label>
             </div>
         </div>
     
         <div class="row">
-            <div class="input-field col s12">
+            <div class="input-field col-12">
                 <i class="material-icons prefix">assignment</i>
-                <input id="fat" name="fat" type="text" value="{{vegetable.fat}}">
-                <label for="icon_prefix">Fat(g)</label>
+                <input id="fat" name="fat" type="text" value="{{vegetable.fat}}" required>
+                <label>Fat(g)</label>
             </div>
         </div>
     
         <div class="row">
-            <div class="input-field col s12">
+            <div class="input-field col-12">
                 <i class="material-icons prefix">assignment</i>
-                <input id="protein" name="protein" type="text" value="{{vegetable.protein}}">
-                <label for="icon_prefix">Protein(g)</label>
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="file-field input-field">
-                <div class="btn">
-                <span>Image</span>
-                <input type="file" name="image">
-                </div>
-                <div class="file-path-wrapper">
-                <input class="file-path validate" type="text">
-                </div>
+                <input id="protein" name="protein" type="text" value="{{vegetable.protein}}" required>
+                <label>Protein(g)</label>
             </div>
         </div>
 
         <div class="row">
-            <button class="btn waves-effect waves-light" type="submit">Add Task
-                <i class="material-icons right">playlist_add</i>
+            <button class="btn waves-effect waves-light" type="submit">Edit Vegetable
+                <i class="material-icons right">edit</i>
              </button>
         </div>
     </form>
 </div>
 
-
-    {% endblock content %}
+{% endblock content %}

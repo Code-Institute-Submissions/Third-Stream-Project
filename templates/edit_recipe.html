@@ -1,14 +1,17 @@
 {% extends 'base.html' %} {% block content %}
+
 <h3>Add Recipe</h3>
+
 <div class="row">
     <form method="POST" class="col s12" enctype='multipart/form-data'>
         <div class="row">
             <div class="input-field col s12">
                 <i class="material-icons prefix">assignment</i>
                 <input id="recipe_name" name="recipe_name" type="text" value="{{recipe.recipe_name}}">
-                <label for="icon_prefix">Recipe Name</label>
+                <label>Recipe Name</label>
             </div>
         </div>
+        
         <div class="row">
             <div class="file-field input-field">
                 <div class="btn">
@@ -20,10 +23,10 @@
                 </div>
             </div>
         </div>
+        
         <div class="input-field col s12">
             <i class="material-icons prefix">poll</i>
             <select id="meats" name="meats" multiple>
-              
               {% for meat in meat_options %}
               <optgroup label="{{ meat }}">
                 {% for option in meat_options[meat] %}                  
@@ -31,7 +34,6 @@
                 {% endfor %}
               </optgroup>
               {% endfor %}
-              
             </select>
             <label>Add Meat</label>
         </div>
@@ -48,7 +50,7 @@
               {% endfor %}
             </select>
             <label>Add Vegtables</label>
-         </div>
+        </div>
          
         <div class="input-field col s12">
             <i class="material-icons prefix">poll</i>
@@ -66,18 +68,19 @@
             </select>
             <label>Add Herbs and Spices</label>
             </div>
+            
         <div class="input-field col s12">
             <p>Don't see a specific herb or spice here?</p>
             <p>Add it to the list here --></p>
             <a href="{{url_for('add_herb_or_spice')}}" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
         </div>
+        
         <div class="row">
             <button class="btn waves-effect waves-light" type="submit">Add Task
-                <i class="material-icons right">playlist_add</i>
+                <i class="material-icons right">edit</i>
              </button>
         </div>
     </form>
 </div>
-
 
 {% endblock content %}

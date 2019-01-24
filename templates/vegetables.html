@@ -1,18 +1,17 @@
 {% extends 'base.html' %} {% block content %}
 
-<h1>Vegetables</h1>
+<h2>Vegetables</h2>
 <hr>
 <br>
 <br>
 <br>
 
 <div class="row">
-    
     {% for vegetable in vegetables %}
     <div class="col-s-4 col-md-4 col-lg-4">
         <div class="card">
             <div class="card-image waves-effect waves-block waves-light">
-                <img class="activator" src="{{ vegetable.image }}" width="75" height="175">
+                <img class="activator" src="{{ vegetable.image }}" width="75" height="175" alt="{{ vegetable.vegetable_name }}">
             </div>
             <div class="card-content">
                 <span class="card-title activator grey-text text-darken-4">{{ vegetable.vegetable_name }}<i class="material-icons right">more_vert</i></span>
@@ -34,8 +33,5 @@
         <a href="{{url_for('add_vegetable')}}" class="bottom-right btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
     </div>
 </div>
-
-
-
 
 {% endblock content %}

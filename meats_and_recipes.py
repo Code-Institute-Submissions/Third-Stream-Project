@@ -86,15 +86,12 @@ def add_vegetable():
         mongo.db["vegetables"].insert_one(form_values)
         return redirect("/vegetables")
     else:
-        return render_template("add_vegtable.html")
+        return render_template("add_vegetable.html")
 
 @app.route("/<vegetable_name>/<vegetable_id>/edit/", methods=["POST", "GET"])        
 def edit_vegetable(vegetable_name, vegetable_id):
     if request.method == "POST":
-        image = request.files['image']  
-        image_string = base64.b64encode(image.read()).decode("utf-8")
         form_values = request.form.to_dict()
-        form_values["image"] = "data:image/png;base64," + image_string
         mongo.db["vegetables"].update({"_id": ObjectId(vegetable_id)}, form_values)
         return redirect(url_for("show_vegetables"))
     else:
@@ -231,25 +228,6 @@ def edit_recipe(recipe_name, recipe_id):
             veg_options[name] = veg_names
             
         return render_template('edit_recipe.html', recipe=the_recipe, meat_options=meat_options, veg_options=veg_options, herbs=herbs, spices=spices)
-    
-@app.route("/add_herb", methods=["POST", "GET"])
-def add_herb():
-    if request.method == "POST":
-        form_values = request.form.to_dict()
-        mongo.db["herbs"].insert_one(form_values)
-        return redirect("/add_recipe")   
-    else: 
-        return render_template("add_herb.html")
-        
-@app.route("/add_spice", methods=["POST", "GET"])
-def add_spice():
-    if request.method == "POST":
-        form_values = request.form.to_dict()
-        category = form_values["spice_name"]
-        mongo.db["spices"].insert_one(form_values)
-        return redirect("/add_recipe")   
-    else: 
-        return render_template("add_spice.html")
 
 if __name__ == "__main__":
         app.run(host=os.getenv('IP', '0.0.0.0'), port=int(os.getenv('PORT', 8080)), debug=True)
