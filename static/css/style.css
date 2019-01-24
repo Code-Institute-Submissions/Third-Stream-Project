@@ -14,16 +14,34 @@ body {
     }
 }
 
+p {
+    line-height: 2;
+}
+
 nav .brand-logo {
     font-size: 1.7rem;
 }
 
-h2, h3 {
+h1, h2 {
     margin-left: 70%;
 }
 
+h3, .right {
+    margin-left: 50%;
+}
+
+.large-margin-top {
+    margin-top: 10vh;
+}
+
+@media (min-width: 768px) {
+    .large-margin-top {
+    margin-top: 30vh;
+}
+}
+
 @media (max-width: 568px) {
-    h2, h3 {
+    h1, h2, h3 {
         margin-left: 10%;
     }
 }
@@ -53,11 +71,27 @@ h2, h3 {
     }
 }
 
+.recipe-margin-left {
+    margin-left: 50%;
+}
+
 @media (max-width: 500px) {
     .recipe-margin-left {
+        margin-left: 10%;
+    }
+}
+
+.homepage-margin-left {
+    margin-left: 50%;
+}
+
+@media (max-width: 500px) {
+    .homepage-margin-left {
         margin-left: 15%;
     }
 }
+
+
 
 .bottom-right {
     position: fixed;
