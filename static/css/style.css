@@ -30,14 +30,16 @@ h3, .right {
     margin-left: 50%;
 }
 
-.large-margin-top {
-    margin-top: 10vh;
+@media (max-width: 768px) {
+    .large-margin-top {
+        margin-top: 10vh;
+    }
 }
 
 @media (min-width: 768px) {
     .large-margin-top {
     margin-top: 30vh;
-}
+    }
 }
 
 @media (max-width: 568px) {
@@ -70,9 +72,10 @@ h3, .right {
         margin-left: 5%;
     }
 }
-
-.recipe-margin-left {
-    margin-left: 50%;
+@media (min-width: 500px) {
+    .recipe-margin-left {
+        margin-left: 50%;
+    }
 }
 
 @media (max-width: 500px) {
@@ -80,9 +83,10 @@ h3, .right {
         margin-left: 10%;
     }
 }
-
-.homepage-margin-left {
-    margin-left: 50%;
+@media (min-width: 500px) {
+    .homepage-margin-left {
+        margin-left: 50%;
+    }
 }
 
 @media (max-width: 500px) {
