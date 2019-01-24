@@ -1,10 +1,9 @@
-html, 
 body {
-    background-image: url('images/food-background.jpeg');
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-attachment: fixed;
-    background-size: cover;
+  background-image: url('images/food-background.jpeg');
+  background-size: cover;
+  color: #333333;
+  margin-top: 5rem;
+  background-attachment: fixed;
 }
 
 @media (min-width: 992px) {
