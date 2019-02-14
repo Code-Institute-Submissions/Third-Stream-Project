@@ -1,6 +1,6 @@
 html, 
 body {
-    background-image: url('images/food-background.jpeg');
+    background-image: url('../images/food-background.jpeg');
     background-repeat: no-repeat;
     background-position: center center;
     background-attachment: fixed;
