@@ -7,19 +7,13 @@ body {
     background-size: cover;
 }
 
-@media (min-width: 992px) {
-    .brand-logo {
-        font-size: 1.7rem;
-        margin-left: 5%;
-    }
-}
-
 p {
     line-height: 2;
 }
 
-nav .brand-logo {
-    font-size: 1.7rem;
+a:hover {
+    color: white;
+    text-decoration: none;
 }
 
 h1, h2 {
@@ -29,6 +23,70 @@ h1, h2 {
 h3, .right {
     margin-left: 50%;
 }
+
+@media (max-width: 568px) {
+    h1, h2, h3 {
+        margin-left: 10%;
+    }
+}
+
+.margin-bottom {
+    margin-bottom: 10%;
+}
+
+.margin-top {
+    margin-top: 5%;
+}
+
+/* ----- Navbar ------- */
+
+@media (min-width: 992px) {
+    .brand-logo {
+        font-size: 1.7rem;
+        margin-left: 5%;
+    }
+}
+
+nav .brand-logo {
+    font-size: 1.7rem;
+}
+
+/* ---- Cuts ----- */
+
+.btn_small {
+    height: 24px;
+    width: 60px;
+    line-height: 24px;
+    margin: 5px 5px;
+    padding: 0 0.5em;
+}
+
+/* ----- Vegetables ------ */
+
+.collapsible-body {
+    background-color: white;
+}
+
+@media (min-width: 576px) {
+    .margin-left {
+        margin-left: 35%;
+    }
+}
+
+@media (min-width: 400px) and (max-width: 576px) {
+    .margin-left {
+        margin-left: 20%;
+    }
+}
+
+@media (max-width: 500px) {
+    .margin-left {
+        margin-left: 5%;
+    }
+}
+
+
+/* ------- Homepage --------- */
 
 @media (max-width: 768px) {
     .large-margin-top {
@@ -42,47 +100,6 @@ h3, .right {
     }
 }
 
-@media (max-width: 568px) {
-    h1, h2, h3 {
-        margin-left: 10%;
-    }
-}
-
-.btn_small {
-    height: 24px;
-    width: 60px;
-    line-height: 24px;
-    margin: 5px 5px;
-    padding: 0 0.5em;
-}
-
-
-.margin-top {
-    margin-top: 5%;
-}
-
-@media (min-width: 500px) {
-    .margin-left {
-        margin-left: 35%;
-    }
-}
-
-@media (max-width: 500px) {
-    .margin-left {
-        margin-left: 5%;
-    }
-}
-@media (min-width: 500px) {
-    .recipe-margin-left {
-        margin-left: 50%;
-    }
-}
-
-@media (max-width: 500px) {
-    .recipe-margin-left {
-        margin-left: 10%;
-    }
-}
 @media (min-width: 500px) {
     .homepage-margin-left {
         margin-left: 50%;
@@ -91,11 +108,11 @@ h3, .right {
 
 @media (max-width: 500px) {
     .homepage-margin-left {
-        margin-left: 15%;
+        margin-left: 20%;
     }
 }
 
-
+/* ----- Fixed add button --------- */
 
 .bottom-right {
     position: fixed;
@@ -104,10 +121,7 @@ h3, .right {
     right: 35px;
 }
 
-a:hover {
-    color: white;
-    text-decoration: none;
-}
+/* ------ Meal images ------- */
 
 @media (min-width: 992px) {
     .img-responsive {
@@ -121,5 +135,19 @@ a:hover {
             display: block;
             max-width: 100%;
             height: auto
+    }
+}
+
+/* ------ Meal text ------ */
+
+@media (min-width: 500px) {
+    .meal-margin-left {
+        margin-left: 50%;
+    }
+}
+
+@media (max-width: 500px) {
+    .meal-margin-left {
+        margin-left: 10%;
     }
 }

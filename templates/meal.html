@@ -2,14 +2,14 @@
 
 <div class="row margin-top">
     
-     <div class="col-12 margin-top recipe-margin-left">
+     <div class="col-12 margin-top meal-margin-left">
         {% for image in images %}
-        <img src="{{ image.image }}" class="img-responsive shadow" alt="{{recipe_name}}"> 
+        <img src="{{ image.image }}" class="img-responsive shadow" alt="{{meal_name}}"> 
         {% endfor %}
     </div>
     
-    <div class="col-12 margin-top recipe-margin-left">
-        <strong>{{recipe_name}}</strong>
+    <div class="col-12 margin-top meal-margin-left">
+        <strong>{{meal_name}}</strong>
         <br>
         <br>
         <p>Total for meal: </p>
@@ -19,15 +19,15 @@
         <p>Protein(g): {{ total_protein }}</p>
         <hr>
         <p>Ingredients: 
-        {% for cuts in recipe_meats.keys() %} 
+        {% for cuts in meal_meats.keys() %} 
         {{ cuts }}, 
         {% endfor %} 
         
-        {% for veg in recipe_vegetables.keys() %} 
+        {% for veg in meal_vegetables.keys() %} 
         {{ veg }}, 
         {% endfor %} 
         
-        {% for seasoning in recipe_seasoning %} 
+        {% for seasoning in meal_seasoning %} 
         {{seasoning}}, 
         {% endfor %}</p>
     </div>

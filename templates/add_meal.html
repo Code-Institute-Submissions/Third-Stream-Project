@@ -1,14 +1,14 @@
 {% extends 'base.html' %} {% block content %}
 
-<h3 class="margin-left">Add Recipe</h3>
+<h3 class="margin-left">Add Meal</h3>
 
 <div class="row">
     <form method="POST" class="col-12 margin-left" enctype='multipart/form-data'>
         <div class="row">
             <div class="input-field col s12">
                 <i class="material-icons prefix">assignment</i>
-                <input id="recipe_name" name="recipe_name" type="text" required>
-                <label>Recipe Name</label>
+                <input id="meal_name" name="meal_name" type="text" required>
+                <label>Meal Name</label>
             </div>
         </div>
 
@@ -76,7 +76,7 @@
 
         <div class="row">
             <div class="col-12">
-                <button class="btn waves-effect waves-light" type="submit">Add Recipe
+                <button class="btn waves-effect waves-light" type="submit">Add Meal
                 <i class="material-icons right">add_box</i>
              </button>
             </div>
