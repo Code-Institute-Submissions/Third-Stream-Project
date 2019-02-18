@@ -31,7 +31,7 @@
               {% for meat in meat_options %}
               <optgroup label="{{ meat }}">
                 {% for option in meat_options[meat] %}                  
-                <option value="{{ meat }} {{ option }}">{{ option }}</option>
+                <option type="checkbox" value="{{ meat }} {{ option }}">{{ option }}</option>
                 {% endfor %}
               </optgroup>
               {% endfor %}

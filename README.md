@@ -102,6 +102,7 @@ Inspiration for the homapage content came from https://www.myfitnesspal.com/
 
 ### Media
 
+* Logo was obtained from http://www.iconarchive.com/
 * Icons used were obtained from Materialize.
 * Background image retrieved from google images.
 

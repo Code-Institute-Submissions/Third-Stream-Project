@@ -2,13 +2,14 @@
 
 <div class="row margin-top">
     
-     <div class="col-12 margin-top meal-margin-left">
+     <div class="col-lg-6 col-md-6 col-sm-12 margin-top meal-margin-left">
         {% for image in images %}
         <img src="{{ image.image }}" class="img-responsive shadow" alt="{{meal_name}}"> 
         {% endfor %}
     </div>
-    
-    <div class="col-12 margin-top meal-margin-left">
+</div>
+<div class="row">
+    <div class="col-lg-6 col-md-6 col-sm-12 margin-top meal-margin-left meal-text-margin-left">
         <strong>{{meal_name}}</strong>
         <br>
         <br>
