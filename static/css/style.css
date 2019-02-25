@@ -57,9 +57,18 @@ h3, .right {
     }
 }
 
+@media only screen and (max-width: 992px) {
+    nav .brand-logo {
+        left: 35%;
+    }
+}
 nav .brand-logo {
-    font-size: 1.7rem;
+    font-size: 1.3rem;
     font-family: cursive;
+}
+
+nav .sidenav-trigger {
+    float: right;
 }
 
 /* ---- Cuts ----- */
